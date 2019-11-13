@@ -31,8 +31,11 @@ const withCurrency = (BaseComponent) => (
           <div>
             <button className='add'>+</button>
             <button className='subtract'>-</button>
-            {this.props.render(currencyData[this.state.selectedCurrency], this.state.amount)}
           </div>
+          <BaseComponent
+            currency={currencyData[this.state.selectedCurrency]}
+            amount={this.state.amount}
+          />
         </div>
       );
     }
